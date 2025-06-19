@@ -667,6 +667,11 @@
                   '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "v8_header_set.\\"v8_internal_headers\\".*?v8_enable_maglev.*?v8_current_cpu == \\"x64\\".*?sources \\+= ")',
                 ],
               }],
+              ['v8_target_arch=="riscv64"', {
+                'sources': [
+                  '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "v8_header_set.\\"v8_internal_headers\\".*?v8_enable_maglev.*?v8_current_cpu == \\"riscv64\\".*?sources \\+= ")',
+                ],
+              }],
             ],
           }],
           ['v8_enable_webassembly==1', {
@@ -1107,6 +1112,11 @@
             ['v8_target_arch=="x64"', {
               'sources': [
                 '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"v8_base_without_compiler.*?v8_enable_maglev.*?v8_current_cpu == \\"x64\\".*?sources \\+= ")',
+              ],
+            }],
+            ['v8_target_arch=="riscv64"', {
+              'sources': [
+                '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"v8_base_without_compiler.*?v8_enable_maglev.*?v8_current_cpu == \\"riscv64\\".*?sources \\+= ")',
               ],
             }],
           ],
